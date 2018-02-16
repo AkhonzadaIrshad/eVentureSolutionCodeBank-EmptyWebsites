@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQueryEvents</title>
+    <link href="Content/Styles/bootstrap.css" rel="stylesheet" />
+    <style>
+        .loginform {
+            border: 1px solid gray;
+            padding: 20px;
+            width: 19%;
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="alert" id="message">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="nav navbar-default">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" id="toggleloginform">Login</a>
+                    </li>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Cotact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row loginform">
+            <form>
+                <label>username</label><br />
+                <input type="text" id="username" /><br />
+                <label>password</label><br />
+                <input type="password" id="password" /><br />
+                <input type="submit" id="loginbtn" value="Login" class="btn btn-sm btn-default" />
+            </form>
+        </div>
+
+
+    </div>
+
+
+    <script src="Scripts/jquery-2.2.3.js"></script>
+    <script>
+
+        $(function () {
+            //alert("Welcome");
+            $(".loginform").hide();
+            $("#message").hide();
+
+            $("#toggleloginform").click(function () {
+                //$(".loginform").toggle();
+                $(".loginform").slideToggle();
+                
+            });
+
+
+            
+            $("#loginbtn").click(function(event) {
+                event.preventDefault();
+
+                var username = $("#username");
+                var password = $("#password");
+                if (username.val() != "") {
+                    username.css({ "border": "1px solid lightgray" });
+                    if (password.val() != "") {
+                        password.css({ "border": "1px solid lightgray" });
+                        $("#message").show();
+                        if (password.val() == "Admin") {
+                            $("#message").removeClass("alert-danger");
+                            $("#message").addClass("alert-success");
+                            $("#message").html("Welcome " + username.val() + " On Our Website");
+                        } else {
+                            $("#message").removeClass("alert-success");
+                            $("#message").addClass("alert-danger");
+                            $("#message").html("Sorry " + username.val() + " Your Password is Wrong :(");
+                        }
+
+
+                    }
+                    else {
+                        password.css({ "border": "1px solid red" });
+                    }
+                } else {
+                    username.css({ "border": "1px solid red" });
+                }
+            });
+
+
+         
+        });
+
+
+
+    </script>
+</body>
+</html>

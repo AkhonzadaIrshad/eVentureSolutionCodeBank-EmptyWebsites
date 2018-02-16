@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery</title>
+</head>
+<body>
+
+    <!--<button onclick="FirstMethod()">Click Me</button>-->
+
+    <!--<input type="text" placeholder="value 1" id="value1" />
+    +
+    <input type="text" placeholder="value 2" id="value2" />
+    <button onclick="Calculate()">=</button>
+    <input type="text" placeholder="result" id="result" />-->
+    
+
+
+    <!--<button id="btn">Click Me</button>-->
+
+<input type="text" placeholder="value 1" id="value1" />
++
+<input type="text" placeholder="value 2" id="value2" />
+<button id="calculate">=</button>
+<input type="text" placeholder="result" id="result" />
+
+
+
+<script src="Scripts/jquery-2.2.3.js"></script>
+<script>
+
+    //$("#btn").click(function() {
+
+    //    alert("First Alert From jQuery");
+
+    //});
+
+    $("#calculate").click(function() {
+
+        var value1 = $("#value1").val();
+        var value2 = $("#value2").val();
+        var result = parseInt(value1) + parseInt(value2);
+        $("#result").val(result);
+
+    });
+
+
+</script>
+
+
+<script>
+
+
+    //function FirstMethod() {
+    //    alert("This is First Alert From JS");
+    //}
+
+    //function Calculate() {
+
+    //    //document.getElementById("result").value = parseInt(document.getElementById("value1").value) +
+    //    //    parseInt(document.getElementById("value2").value);
+
+
+    //    var value1 = document.getElementById("value1").value;
+    //    var value2 = document.getElementById("value2").value;
+    //    var result = parseInt(value1) + parseInt(value2);
+    //    document.getElementById("result").value = result;
+    //    ////alert(value1);
+
+
+    //}
+
+
+</script>
+</body>
+</html>
